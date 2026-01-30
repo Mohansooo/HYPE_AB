@@ -47,6 +47,40 @@ extract the elevation, soil type, and land use data
   --submit job
 ```
 
+```bash
+./extract-gis.sh --dataset=soil_class \
+  --dataset-dir=/project/rrg-alpie/data/geospatial-data/soil_classes/ \
+  --variable=soil_classes \
+  --output-dir=$SCRATCH/AB_HYPE/gistool-output/soil/ \
+  --shape-file="$SCRATCH/delineation-product/AB/AB-basin-watersheds-dissolved.shp" \
+  --print-geotiff=true \
+  --stat=frac,coords \
+  --cache=$SCRATCH/cache/ \
+  --prefix=AB_model_ \
+  --fid=DN \
+  --cluster="$HOME/github-repos/gistool/etc/clusters/drac3.json" \
+  --include-na \
+  --email="m58song@uwaterloo.ca" \
+  --submit job
+```
+
+```bash
+./extract-gis.sh --dataset=merit-hydro \
+  --dataset-dir=/project/rrg-alpie/data/geospatial-data/MERIT-Hydro/ \
+  --variable=elv \
+  --output-dir=$SCRATCH/AB_HYPE/gistool-output/elevation/ \
+  --shape-file="$SCRATCH/delineation-product/AB/AB-basin-watersheds-dissolved.shp" \
+  --print-geotiff=true \
+  --stat=frac,coords \
+  --cache=$SCRATCH/cache/ \
+  --prefix=AB_model_ \
+  --fid=DN \
+  --cluster="$HOME/github-repos/gistool/etc/clusters/drac3.json" \
+  --include-na \
+  --email="m58song@uwaterloo.ca" \
+  --submit job
+```
+
 # 5. easymore
 process the meterological data
 
